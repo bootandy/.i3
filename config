@@ -149,7 +149,6 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        #status_command i3status
         status_command i3blocks
 }
 
@@ -158,4 +157,8 @@ bar {
 bindsym --release button2 kill
 
 
+#shutdown code:
+bindsym $mod+F12 exec --no-startup-id dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Suspend" boolean:true
+
+bindsym $mod+Shift+ESC exec --no-startup-id dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Reboot" boolean:true
 
