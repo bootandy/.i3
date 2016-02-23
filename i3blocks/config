@@ -23,9 +23,14 @@
 # Global properties
 separator_block_width=15
 
+[weather]
+command=~/.i3/i3blocks/scripts/weather.sh
+interval=300
+
 [memory]
 label=MEM
 command=/usr/share/i3blocks/memory
+color=#1793D1
 separator=false
 interval=30
 
@@ -74,25 +79,17 @@ color=#d15517
 interval=5 # IMPORTANT sync with above script
 min_width=⮉1000 kB/s
 
-
 [cpu]
 label=CPU
 command=/usr/share/i3blocks/cpu_usage
 interval=10
 min_width=CPU: 100.00%
-#separator=false
-
-#[load]
-#command=/usr/share/i3blocks/load_average
-#interval=10
 
 [time]
-command=date '+%Y-%m-%d %H:%M:%S'
-interval=5
+command=date '+%Y-%m-%d %H:%M'
+interval=60
+color=#00FF00
 
-[weather]
-command=~/.i3/i3blocks/scripts/weather.sh
-interval=3600
 
 [network]
 full_text=Network
