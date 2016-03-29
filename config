@@ -11,6 +11,7 @@
 
 set $mod Mod4
 
+set $mod_alt    Mod5
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -89,17 +90,56 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+set $screen_left  DVI-0
+set $screen_right DVI-1
+
+
+# workspace monitor bindings
+workspace 1 output  $screen_left
+workspace 2 output  $screen_left
+workspace 3 output  $screen_left
+workspace 4 output  $screen_left
+workspace 5 output  $screen_left
+workspace 6 output  $screen_left
+workspace 7 output  $screen_left
+workspace 8 output  $screen_left
+workspace 9 output  $screen_left
+workspace 10 output $screen_left
+
+# second vga monitor
+workspace 11 output $screen_right
+workspace 12 output $screen_right
+workspace 13 output $screen_right
+workspace 14 output $screen_right
+workspace 15 output $screen_right
+workspace 16 output $screen_right
+workspace 17 output $screen_right
+workspace 18 output $screen_right
+workspace 19 output $screen_right
+workspace 20 output $screen_right
+
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
+bindsym $mod+1 workspace  1
+bindsym $mod+2 workspace  2
+bindsym $mod+3 workspace  3
+bindsym $mod+4 workspace  4
+bindsym $mod+5 workspace  5
+bindsym $mod+6 workspace  6
+bindsym $mod+7 workspace  7
+bindsym $mod+8 workspace  8
+bindsym $mod+9 workspace  9
 bindsym $mod+0 workspace 10
+
+bindsym $mod_alt+1 workspace 11
+bindsym $mod_alt+2 workspace 12
+bindsym $mod_alt+3 workspace 13
+bindsym $mod_alt+4 workspace 14
+bindsym $mod_alt+5 workspace 15
+bindsym $mod_alt+6 workspace 16
+bindsym $mod_alt+7 workspace 17
+bindsym $mod_alt+8 workspace 18
+bindsym $mod_alt+9 workspace 19
+bindsym $mod_alt+0 workspace 20
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -113,6 +153,17 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+bindsym $mod_alt+Shift+1 move container to workspace 11
+bindsym $mod_alt+Shift+2 move container to workspace 12
+bindsym $mod_alt+Shift+3 move container to workspace 13
+bindsym $mod_alt+Shift+4 move container to workspace 14
+bindsym $mod_alt+Shift+5 move container to workspace 15
+bindsym $mod_alt+Shift+6 move container to workspace 16
+bindsym $mod_alt+Shift+7 move container to workspace 17
+bindsym $mod_alt+Shift+8 move container to workspace 18
+bindsym $mod_alt+Shift+9 move container to workspace 19
+bindsym $mod_alt+Shift+0 move container to workspace 20
+#
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -160,5 +211,5 @@ bindsym --release button2 kill
 #shutdown code:
 bindsym $mod+F12 exec --no-startup-id dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Suspend" boolean:true
 
-bindsym $mod+Shift+ESC exec --no-startup-id dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Reboot" boolean:true
+bindsym $mod+F10 exec --no-startup-id dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Reboot" boolean:true
 
