@@ -3,4 +3,7 @@ My i3 config and i3 status bar
 after setup run this:
 ln -s ~/.i3/i3blocks ~/.config/i3blocks 
 
+requires:
+ranger
+ipython
 
