@@ -143,7 +143,11 @@ workspace f output $screen_right
 workspace 9 output $screen_right
 
 # Home startup:
-exec --no-startup-id i3-msg 'workspace 1:; exec /usr/bin/google-chrome'
+exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/google-chrome'
+exec --no-startup-id i3-msg 'workspace a; exec /usr/bin/google-chrome'
+exec --no-startup-id i3-msg 'workspace s; exec exec i3-sensible-terminal'
+exec --no-startup-id i3-msg 'workspace d; exec exec i3-sensible-terminal'
+exec --no-startup-id i3-msg 'workspace f; exec exec i3-sensible-terminal'
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -193,7 +197,7 @@ bindsym --release button2 kill
 #bindsym $mod+F12 exec i3lock
 bindsym $mod+F12 exec --no-startup-id dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Suspend" boolean:true
 
-bindsym $mod+F10 exec --no-startup-id dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Reboot" boolean:true
+bindsym $mod+F11 exec --no-startup-id dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Reboot" boolean:true
 
 # Experimental locking screens
 #exec --no-startup-id xset dpms 600
