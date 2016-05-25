@@ -107,47 +107,50 @@ bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
 bindsym $mod+9 workspace 9
 
-bindsym $mod+a workspace a
-bindsym $mod+s workspace s
-bindsym $mod+d workspace d
-bindsym $mod+f workspace f
+bindsym $mod+a workspace number 5
+bindsym $mod+s workspace number 6
+bindsym $mod+d workspace number 7
+bindsym $mod+f workspace number 8
 
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
 bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+a move container to workspace a
-bindsym $mod+Shift+s move container to workspace s
-bindsym $mod+Shift+d move container to workspace d
-bindsym $mod+Shift+f move container to workspace f
-bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+a move container to workspace number 5
+bindsym $mod+Shift+s move container to workspace number 6
+bindsym $mod+Shift+d move container to workspace number 7
+bindsym $mod+Shift+f move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
 
 # Home layout:
-set $screen_left DVI-0
-set $screen_right DVI-1
+#set $screen_left DVI-0
+#set $screen_right DVI-1
+
+# work layout
+set $screen_right HDMI1
+set $screen_left VGA1
 
 workspace 1 output $screen_left
 workspace 2 output $screen_left
 workspace 3 output $screen_left
 workspace 4 output $screen_left
-workspace 5 output $screen_left
 
-workspace a output $screen_right
-workspace s output $screen_right
-workspace d output $screen_right
-workspace f output $screen_right
+workspace 5 output $screen_right
+workspace 6 output $screen_right
+workspace 7 output $screen_right
+workspace 8 output $screen_right
 workspace 9 output $screen_right
 
 # Home startup:
+#exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/google-chrome'
+#exec --no-startup-id i3-msg 'workspace f; exec /usr/bin/google-chrome'
+
+# Work startup:
+exec --no-startup-id i3-msg 'workspace 5; exec i/usr/bin/google-chrome'
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/google-chrome'
-exec --no-startup-id i3-msg 'workspace a; exec /usr/bin/google-chrome'
-exec --no-startup-id i3-msg 'workspace s; exec exec i3-sensible-terminal'
-exec --no-startup-id i3-msg 'workspace d; exec exec i3-sensible-terminal'
-exec --no-startup-id i3-msg 'workspace f; exec exec i3-sensible-terminal'
+exec --no-startup-id i3-msg 'workspace 6; exec i3-sensible-terminal'
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -194,12 +197,13 @@ bindsym --release button2 kill
 
 
 #shutdown code:
-#bindsym $mod+F12 exec i3lock
-bindsym $mod+F12 exec --no-startup-id dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Suspend" boolean:true
+bindsym $mod+F12 exec i3lock
+#bindsym $mod+F12 exec --no-startup-id dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Suspend" boolean:true
 
 bindsym $mod+F11 exec --no-startup-id dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Reboot" boolean:true
 
 # Experimental locking screens
-#exec --no-startup-id xset dpms 600
-#exec --no-startup-id xautolock -time 30 -locker i3lock
+exec --no-startup-id xset dpms 600
+exec --no-startup-id xautolock -time 300 -locker i3lock
+
 
