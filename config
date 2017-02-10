@@ -167,10 +167,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym lresize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -199,11 +199,9 @@ bindsym --release button2 kill
 #shutdown code:
 bindsym $mod+F12 exec i3lock
 #bindsym $mod+F12 exec --no-startup-id dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Suspend" boolean:true
+#bindsym $mod+F11 exec --no-startup-id dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Reboot" boolean:true
+bindsym $mod+F4 exec --no-startup-id "systemctl hibernate"
 
-bindsym $mod+F11 exec --no-startup-id dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Reboot" boolean:true
-
-# Experimental locking screens
-exec --no-startup-id xset dpms 600
+exec --no-startup-id xset dpms 600 
 exec --no-startup-id xautolock -time 300 -locker i3lock
-
 
