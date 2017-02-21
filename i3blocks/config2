@@ -52,7 +52,7 @@ interval=30
 label=W
 instance=wlan0
 #instance=wlp3s0
-command=/usr/share/i3blocks/wifi
+command=/usr/share/i3blocks/network
 color=#00FF00
 interval=10
 

@@ -1,2 +1,2 @@
-df -kh | grep sdb6 | awk '{print $2,$3, $4}'
+df -kh | grep ubuntu | awk '{print $2,$3, $4}'
 
