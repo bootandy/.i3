@@ -146,17 +146,6 @@ workspace 9 output $screen_right
 
 # Home startup:
 #exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/google-chrome'
-<<<<<<< 027c419d834def464e2465a1ef05dc0f87adf753
-#exec --no-startup-id i3-msg 'workspace f; exec /usr/bin/google-chrome'
-
-# Work startup:
-exec --no-startup-id i3-msg 'workspace 6; exec i3-sensible-terminal'
-=======
-#exec --no-startup-id i3-msg 'workspace a; exec /usr/bin/google-chrome'
-#exec --no-startup-id i3-msg 'workspace s; exec exec i3-sensible-terminal'
-#exec --no-startup-id i3-msg 'workspace d; exec exec i3-sensible-terminal'
-#exec --no-startup-id i3-msg 'workspace f; exec exec i3-sensible-terminal'
->>>>>>> no auto start stuff. Reboot F10 not 11 (too close)
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
