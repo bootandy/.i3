@@ -8,3 +8,4 @@ requires:
 ranger
 ipython
 
+Run: i3-msg restart to restart status bar
