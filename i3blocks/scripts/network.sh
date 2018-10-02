@@ -9,6 +9,12 @@ if [ "$1" != "rx" -a "$1" != "tx" ]; then
     exit 1
 fi
  
+if [ "$1" == "tx" ]; then
+	echo -n "⮉ "
+fi
+if [ "$1" == "rx" ]; then
+	echo -n "⮋ "
+fi
 FILE=/tmp/i3blocks_bandwidth_$TYPE
 touch $FILE
  
