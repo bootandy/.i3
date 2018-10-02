@@ -22,77 +22,67 @@
 
 # Global properties
 separator_block_width=15
-
+ 
 [weather]
-command=~/.i3/i3blocks/scripts/weather.sh
+full_text=weather
+command=~/.config/i3/i3blocks/scripts/weather.sh
 interval=300
-
+ 
+ 
 [memory]
-label=MEM
+full_text=Memory
+short_text=MEM
 command=/usr/share/i3blocks/memory
 color=#1793D1
-separator=false
+separator=true
 interval=30
-
+ 
 [mydisk]
-#label=DISK
-label=💾
-instance=mydisk
-color=#FF66FF
-command=~/.i3/i3blocks/scripts/disk.sh
-interval=30
-
-[disk-home]
-instance=$HOME
-color=#17d155
-command=/usr/share/i3blocks/disk
-interval=30
-
-[wireless]
-label=W
-instance=wlan0
+short_text=DSK
+full_text=💾
+command=~/.config/i3/i3blocks/scripts/disk.sh
+color=#FFFF00
+interval=60
+ 
+#[wireless]
+#label=W
+#instance=wlan0
 #instance=wlp3s0
-command=/usr/share/i3blocks/wifi
-color=#00FF00
-interval=10
-
-[ethernet]
-label=
-instance=eth0
-command=/usr/share/i3blocks/network | grep -v Mbits
-color=#00FF00
-interval=10
-
+#command=/usr/share/i3blocks/wifi
+#color=#00FF00
+#interval=10
+ 
 [net_down]
 label=⮋
-command=~/.i3/i3blocks/scripts/network.sh rx
+command=~/.config/i3/i3blocks/scripts/network.sh rx
 align=left
-color=#1793D1
+color=#7773D1
 interval=5 # IMPORTANT sync with above script
-min_width=⮉1000 kB/s
-
+min_width=⮉ 1000 kB/s
+ 
 [net_up]
 label=⮉
-command=~/.i3/i3blocks/scripts/network.sh tx
+command=~/.config/i3/i3blocks/scripts/network.sh tx
 align=left
 color=#d15517
 interval=5 # IMPORTANT sync with above script
-min_width=⮉1000 kB/s
-
+min_width=⮉ 1000 kB/s
+ 
 [cpu]
-label=CPU
-command=/usr/share/i3blocks/cpu_usage
+full_text=CPU
+short_text=CPU
+command=~/.config/i3/i3blocks/scripts/cpu.sh
+color=#FF66FF
 interval=10
-min_width=CPU: 100.00%
-
+min_width=C: 100.00%
+ 
 [time]
 command=date '+%Y-%m-%d %H:%M'
 interval=60
 color=#00FF00
-
-
+ 
+ 
 [network]
 full_text=Network
 command=nm-connection-editor
 align=left
-
