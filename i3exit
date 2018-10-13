@@ -1,0 +1,17 @@
+#!/bin/sh
+case "$1" in
+    reboot)
+        sudo /sbin/reboot -i
+        ;;
+    shutdown)
+    	sudo /sbin/poweroff -i
+        ;;
+    logout)
+        i3-msg exit
+        ;;
+    *)
+    	echo "Usage: $0 {reboot|shutdown|logout}"
+        exit 2
+esac
+
+exit 0

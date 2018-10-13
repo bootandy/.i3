@@ -21,29 +21,46 @@
 # urgent
 
 # Global properties
+
 separator_block_width=15
- 
+
+[docker]
+full_text=docker
+command=~/.config/i3/i3blocks/scripts/docker.sh
+interval=60
+min_width=a 1000
+color=#FFFF00
+
+
+# See https://github.com/vivien/i3blocks#signal
+[caps-lock]
+#command=xset -q | grep Caps | awk '{printf "CapsLock: %-3s NumLock: %-3s\n", $4, $8 }'
+command=~/.config/i3/i3blocks/scripts/keys.sh
+interval=once
+signal=10
+
+
 [weather]
 full_text=weather
 command=~/.config/i3/i3blocks/scripts/weather.sh
 interval=300
- 
- 
+
+
 [memory]
 full_text=Memory
-short_text=MEM
-command=/usr/share/i3blocks/memory
-color=#1793D1
+#command=/usr/share/i3blocks/memory
+command=~/.config/i3/i3blocks/scripts/mem.sh
+#color=#1793D1
+color=#FF66FF
 separator=true
 interval=30
- 
+
 [mydisk]
-short_text=DSK
 full_text=💾
 command=~/.config/i3/i3blocks/scripts/disk.sh
 color=#FFFF00
 interval=60
- 
+
 #[wireless]
 #label=W
 #instance=wlan0
@@ -51,38 +68,39 @@ interval=60
 #command=/usr/share/i3blocks/wifi
 #color=#00FF00
 #interval=10
- 
+
 [net_down]
-label=⮋
+full_text=⮋
 command=~/.config/i3/i3blocks/scripts/network.sh rx
 align=left
 color=#7773D1
 interval=5 # IMPORTANT sync with above script
 min_width=⮉ 1000 kB/s
- 
+
 [net_up]
-label=⮉
+full_text=⮉
 command=~/.config/i3/i3blocks/scripts/network.sh tx
 align=left
 color=#d15517
 interval=5 # IMPORTANT sync with above script
 min_width=⮉ 1000 kB/s
- 
+
 [cpu]
 full_text=CPU
-short_text=CPU
 command=~/.config/i3/i3blocks/scripts/cpu.sh
 color=#FF66FF
 interval=10
 min_width=C: 100.00%
- 
+
 [time]
+full_text=TIME
 command=date '+%Y-%m-%d %H:%M'
 interval=60
 color=#00FF00
- 
- 
+
+
 [network]
 full_text=Network
 command=nm-connection-editor
 align=left
+
