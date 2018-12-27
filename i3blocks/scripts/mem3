@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+
+import re
+from subprocess import check_output
+
+raw = check_output(['cat' ,'/proc/meminfo']).decode()
+
+lines = raw.split("\n")
+data = {'free': 0, 'total': 0}
+
+for l in lines:
+    if l.startswith('MemTotal'):
+        data['total'] = int(l.split(' ')[-2].strip())
+    elif l.startswith('MemFree') or l.startswith('Cached') or l.startswith('Buffers'):
+        data['free'] += int(l.split(' ')[-2].strip())
+
+percent = (data['total'] - data['free']) / float(data['total']) * 100.0
+
+green_part = 255 - (percent / 100.0 * 255)
+color = '#FF' + '{:02x}'.format(int(green_part)) + '{:02x}'.format(int(green_part))
+
+print("<span font='FontAwesome'>\uf2db</span> <span color='%s'>%.1fG/%.1fG %.f%%</span>"%(color, (data['total'] - data['free'])/1024**2, data['total']/1024**2, percent))
+

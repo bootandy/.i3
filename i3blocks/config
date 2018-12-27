@@ -24,6 +24,10 @@
 
 separator_block_width=15
 
+[syslog]
+command=~/.config/i3/i3blocks/scripts/syslog
+interval=60
+
 [docker]
 full_text=docker
 command=~/.config/i3/i3blocks/scripts/docker.sh
@@ -47,12 +51,10 @@ interval=300
 
 
 [memory]
-full_text=Memory
-#command=/usr/share/i3blocks/memory
-command=~/.config/i3/i3blocks/scripts/mem.sh
-#color=#1793D1
-color=#FF66FF
-separator=true
+command=~/.config/i3/i3blocks/scripts/mem3
+markup=pango
+#color=#FF66FF
+#separator=true
 interval=30
 
 [mydisk]
@@ -92,12 +94,16 @@ color=#FF66FF
 interval=10
 min_width=C: 100.00%
 
+[battery2]
+command=~/.config/i3/i3blocks/scripts/battery2
+markup=pango
+interval=30
+
 [time]
 full_text=TIME
 command=date '+%Y-%m-%d %H:%M'
 interval=60
 color=#00FF00
-
 
 [network]
 full_text=Network

@@ -50,7 +50,7 @@ END {
 		pct=used/total*100
 	}
 	# full text
-	printf("%.1fG/%.1fG (%.f%%)\n", used, total, pct)
+	printf("<span font=\x27""FontAwesome\x27>\\uf240</span> %.1fG/%.1fG %.f%%\n", used, total, pct)
 	# short text
 	printf("%.f%%\n", pct)
 	# color

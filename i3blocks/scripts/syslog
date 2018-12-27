@@ -1,0 +1,2 @@
+tail -1 /var/log/syslog | awk -F '4jane ' '{print $2}'
+
