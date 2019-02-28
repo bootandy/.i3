@@ -1,11 +1,25 @@
 My i3 config and i3 status bar
 
 after setup run this:
-ln -s ~/.i3/i3blocks ~/.config/i3blocks 
-chmod a+x ~/.i3/i3blocks/scripts/* 
+ln -s ~/.i3/i3blocks ~/.config/i3blocks
+chmod a+x ~/.i3/i3blocks/scripts/*
 
 requires:
 ranger
 ipython
 
+Install font from:
+https://www.fontsquirrel.com/fonts/font-awesome
+unzip and put in : /usr/local/share/fonts/
+sudo fc-cache -fv
+
+
 Run: i3-msg restart to restart status bar
+
+
+## Other stuff to install on a new system:
+sudo apt-get install python-pip python-dev build-essential
+sudo apt-get install cmake
+cargo install bat
+cargo install exa
+cargo install fd-find
