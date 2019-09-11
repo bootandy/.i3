@@ -23,7 +23,7 @@ Run: i3-msg restart to restart status bar
 
 ## Other stuff to install on a new system:
 sudo apt-get install python-pip python-dev build-essential
-sudo apt-get install cmake
+sudo apt-get install cmake clang
 cargo install bat
 cargo install exa
 cargo install fd-find
