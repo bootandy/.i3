@@ -7,7 +7,10 @@ sudo apt-get install i3lock
 
 after cloning this dir run:
 ln -s ~/.i3/i3blocks ~/.config/i3blocks
+ln -s ~/.i3/ config/i3
 chmod a+x ~/.i3/i3blocks/scripts/*
+
+Edit syslog file to change 4jane to name of your PC
 
 requires:
 ranger
