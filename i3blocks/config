@@ -53,8 +53,8 @@ interval=300
 [memory]
 command=~/.config/i3/i3blocks/scripts/mem3
 markup=pango
-#color=#FF66FF
-#separator=true
+color=#FF66FF
+separator=true
 interval=30
 
 [mydisk]
@@ -63,13 +63,11 @@ command=~/.config/i3/i3blocks/scripts/disk.sh
 color=#FFFF00
 interval=60
 
-#[wireless]
-#label=W
-#instance=wlan0
-#instance=wlp3s0
-#command=/usr/share/i3blocks/wifi
-#color=#00FF00
-#interval=10
+[wireless]
+label=W
+command=/usr/share/i3blocks/wifi
+color=#00FF00
+interval=10
 
 [net_down]
 full_text=⮋

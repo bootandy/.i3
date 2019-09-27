@@ -10,6 +10,9 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 # exec –no-startup-id "xrandr --auto --output DP-1 --primary --right-of DP-2"
 
+# Invert scroll on trackpad with this name (check xinput)
+exec_always --no-startup-id xinput --set-prop "MSFT0001:01 06CB:CD65 Touchpad" "libinput Natural Scrolling Enabled" 1
+
 
 set $mod Mod4
 
@@ -110,9 +113,16 @@ bindsym $mod+a workspace a
 bindsym $mod+s workspace s
 bindsym $mod+d workspace d
 bindsym $mod+f workspace f
+bindsym $mod+z workspace z
 
+# Home desktop:
 set $screen_right DP-1
 set $screen_left DP-2
+
+# Work laptop:
+set $screen_right HDMI-2
+set $screen_left eDP-1
+
 
 workspace 1 output $screen_left
 workspace 2 output $screen_left
@@ -124,7 +134,7 @@ workspace a output $screen_right
 workspace s output $screen_right
 workspace d output $screen_right
 workspace f output $screen_right
-workspace 9 output $screen_right
+workspace z output $screen_right
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
