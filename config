@@ -111,8 +111,8 @@ bindsym $mod+s workspace s
 bindsym $mod+d workspace d
 bindsym $mod+f workspace f
 
-set $screen_right DP-1
-set $screen_left DP-2
+set $screen_right HDMI-2
+set $screen_left eDP-1
 
 workspace 1 output $screen_left
 workspace 2 output $screen_left
@@ -185,9 +185,9 @@ bindsym --release button2 kill
 
 bindsym $mod+grave exec dmenu_run
 
-bindsym $mod+F1 exec firefox
+bindsym $mod+F1 exec firefox --no-startup-id
 
-exec xautolock -time 5 -locker '~/.config/i3/locker.sh'
+exec xautolock -time 5 -locker '~/.config/i3/locker.sh' --no-startup-id
 
 
 bindsym $mod+F10 exec --no-startup-id dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Reboot" boolean:true
