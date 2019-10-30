@@ -190,11 +190,10 @@ bindsym $mod+F1 exec firefox --no-startup-id
 exec xautolock -time 5 -locker '~/.config/i3/locker.sh' --no-startup-id
 
 
-bindsym $mod+F10 exec --no-startup-id dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Reboot" boolean:true
+bindsym $mod+F10 exec dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Reboot" boolean:true
 
 
 # For status bar:
-bindsym --release Caps_Lock exec pkill -SIGRTMIN+10 i3blocks
 bindsym --release Num_Lock exec pkill -SIGRTMIN+10 i3blocks
 
 bar {

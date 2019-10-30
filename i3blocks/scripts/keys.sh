@@ -1,9 +1,9 @@
-v=`xset -q | grep Caps | awk '{printf "CapsLock: %-3s NumLock: %-3s\n", $4, $8 }'`
+v=`xset -q | grep Num | awk '{printf "Num: %-3s\n", $8 }'`
 
-# If Caps lock is on
-caps_state=`xset -q | grep Caps | awk '{print $4}'`
+# If numlock is on
+num_state=`xset -q | grep Num | awk '{print $8}'`
 echo "$v"
-if [ "$caps_state" = "on" ]; then
+if [ "$num_state" = "off" ]; then
 	exit 33
 fi
 

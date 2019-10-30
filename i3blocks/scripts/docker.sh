@@ -1,2 +1,2 @@
 echo -n '🐋 '
-docker ps -q | wc -l
+kubectl get pods | grep -Ev '^NAME' | wc -l
