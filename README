@@ -3,6 +3,9 @@ My i3 config and i3 status bar
 sudo apt-get install i3
 sudo apt-get install i3status
 sudo apt-get install i3lock
+sudo apt-get install i3blocks
+sudo apt-get install xautolock
+
 
 after cloning this dir run:
 ln -s ~/.i3/i3blocks ~/.config/i3blocks
