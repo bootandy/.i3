@@ -100,6 +100,13 @@ color=#d17537
 interval=5 # IMPORTANT sync with above script
 min_width=⮉ 1000 kB/s
 
+[cpu_temp]
+full_text=CPU Temp
+command=~/.i3/i3blocks/scripts/cpu_temp2.sh
+color=#FF66FF
+interval=10
+min_width=💻  99 °C
+
 [cpu]
 full_text=CPU
 command=~/.config/i3/i3blocks/scripts/cpu.sh
