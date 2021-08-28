@@ -7,6 +7,7 @@ temp=$(
         | head -n1
 )
 
+# Different temperature icons
 if [[ "$temp" -lt 30 ]]; then
     printf '\uf2cb'
 elif [[ "$temp" -lt 40 ]]; then
@@ -19,12 +20,31 @@ else
     printf '\uf2c9'
 fi
 
-printf '💻  %s\u2009°C\n' $temp
+# Green -> yellow -> red
+# ??FF00 -> FFFF0 -> FF??00
+# 30 -> safe
+# 80 -> red
 
-if [[ "$temp" -lt 40 ]]; then
-    printf '\n#3383AE'
-elif [[ "$temp" -ge 60 ]]; then
-    printf '\n#EEBF13'
-elif [[ "$temp" -ge 75 ]]; then
-    printf '\n#E41C28'
+printf '💻  %s°C\n' $temp
+
+if [[ "$temp" -lt 30 ]]; then
+    printf '\n#00FF00'
+
+#elif [[ "$temp" -lt 56 ]]; then
+#    # step from green to yellow
+#    a=$(((temp-30)*10))
+#    printf '\n#%02xFF00' $a
+#
+#elif [[ "$temp" -lt 81 ]]; then
+#    # step from yellow - to red
+#    a=$(((80-temp)*10))
+#    printf '\n#FF%02x00' $a
+
+elif [[ "$temp" -lt 81 ]]; then
+    # step from yellow - to red
+    a=$(((80-temp)*5))
+    printf '\n#FF%02x00' $a
+
+elif [[ "$temp" -gt 80 ]]; then
+    printf '\n#FF0000'
 fi
