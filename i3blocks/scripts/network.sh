@@ -24,8 +24,14 @@ CUR=0
 NETDIR=/sys/class/net
 for IFACE in $(ls -1 $NETDIR); do
     # Skip the loopback interface
-    if [ "$IFACE" == "lo" ]; then
+	if [[ $IFACE == lo ]]; then
         continue
+    fi
+    if [[ $IFACE == veth* ]]; then
+         continue
+    fi
+    if [[ $IFACE == docker* ]]; then
+         continue
     fi
     F=$NETDIR/$IFACE/statistics/${TYPE}_bytes
     N=$(cat $F)
