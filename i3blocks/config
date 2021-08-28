@@ -39,14 +39,12 @@ full_text=docker
 command=~/.config/i3/i3blocks/scripts/docker.sh
 interval=30
 min_width=a 1000
-color=#FFFF00
 
 [docker_run]
 full_text=docker_run
 command=~/.config/i3/i3blocks/scripts/docker_run.sh
 interval=30
 min_width=a   1000
-color=#00FF00
 
 
 # See https://github.com/vivien/i3blocks#signal
@@ -66,14 +64,12 @@ interval=300
 [memory]
 command=~/.config/i3/i3blocks/scripts/mem3
 markup=pango
-#color=#FF66FF
 #separator=true
 interval=30
 
 [mydisk]
 full_text=💾
 command=~/.config/i3/i3blocks/scripts/disk.sh
-color=#FFFF00
 interval=60
 
 #[wireless]
@@ -88,7 +84,6 @@ interval=60
 full_text=⮋
 command=~/.config/i3/i3blocks/scripts/network.sh rx
 align=left
-color=#7773D1
 interval=5 # IMPORTANT sync with above script
 min_width=⮉ 1000 kB/s
 
@@ -96,23 +91,20 @@ min_width=⮉ 1000 kB/s
 full_text=⮉
 command=~/.config/i3/i3blocks/scripts/network.sh tx
 align=left
-color=#d17537
 interval=5 # IMPORTANT sync with above script
 min_width=⮉ 1000 kB/s
 
 [cpu_temp]
 full_text=CPU Temp
 command=~/.i3/i3blocks/scripts/cpu_temp2.sh
-color=#FF66FF
 interval=10
 min_width=💻  99 °C
 
 [cpu]
 full_text=CPU
 command=~/.config/i3/i3blocks/scripts/cpu.sh
-color=#FF66FF
 interval=10
-min_width=C: 100.00%
+min_width=C: 99.00%
 
 [battery2]
 command=~/.config/i3/i3blocks/scripts/battery2
