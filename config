@@ -187,7 +187,7 @@ bindsym $mod+grave exec dmenu_run
 
 bindsym $mod+F1 exec firefox --no-startup-id
 
-exec xautolock -time 5 -locker '~/.config/i3/locker.sh' --no-startup-id
+exec xautolock -time 10 -locker "i3lock  -c 111111 && systemctl suspend" --no-startup-id
 
 
 bindsym $mod+F10 exec dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Reboot" boolean:true
