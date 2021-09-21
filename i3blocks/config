@@ -28,11 +28,11 @@ separator_block_width=15
 command=~/.config/i3/i3blocks/scripts/syslog
 interval=60
 
-[cloud_proxy]
-full_text=cloud_sql_proxy
-command=~/.config/i3/i3blocks/scripts/cloud_sql_proxy.sh
-interval=60
-color=#8888FF
+#[cloud_proxy]
+#full_text=cloud_sql_proxy
+#command=~/.config/i3/i3blocks/scripts/cloud_sql_proxy.sh
+#interval=60
+#color=#8888FF
 
 [docker]
 full_text=docker
@@ -40,11 +40,11 @@ command=~/.config/i3/i3blocks/scripts/docker.sh
 interval=30
 min_width=a 1000
 
-[docker_run]
-full_text=docker_run
-command=~/.config/i3/i3blocks/scripts/docker_run.sh
-interval=30
-min_width=a   1000
+#[docker_run]
+#full_text=docker_run
+#command=~/.config/i3/i3blocks/scripts/docker_run.sh
+#interval=30
+#min_width=a   1000
 
 
 # See https://github.com/vivien/i3blocks#signal
