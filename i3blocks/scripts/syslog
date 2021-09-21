@@ -1,2 +1,2 @@
-tail -1 /var/log/syslog | awk -F 'andybox ' '{print $2}'
+tail -1 /var/log/syslog | awk -F '5jane ' '{print $2}'
 
