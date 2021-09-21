@@ -199,6 +199,6 @@ bindsym --release Num_Lock exec pkill -SIGRTMIN+10 i3blocks
 
 bar {
   status_command i3blocks
-  font pango: FontAwesome 10
+  font pango: FontAwesome 14
 }
 
