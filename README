@@ -33,3 +33,6 @@ sudo apt-get install cmake clang
 cargo install bat
 cargo install exa
 cargo install fd-find
+
+# Fox Xwayland use this to swap buttons:
+sudo apt-get install input-remapper
